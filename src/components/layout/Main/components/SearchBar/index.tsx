@@ -3,18 +3,18 @@ import TextField from '@mui/material/TextField';
 import React, { useCallback, useEffect } from 'react';
 
 import { debounce } from '@mui/material';
-import { useAppDispatch } from 'src/app/hooks';
-import useSyncParams from 'src/hooks/useSyncParams';
-import { KEY_PAGE_PARAMS } from 'src/pages/SearchPage/components/contanst';
+import { DEFAULT_PAGINATION } from 'src/Config';
+import { useAppDispatch } from 'src/Hooks';
+import useSyncParams from 'src/Hooks/useSyncParams';
+import { KEY_PAGE_PARAMS } from 'src/Pages/SearchPage/Components/contanst';
 import {
+  getUserResetStatus,
   getUsersFailure,
   getUsersRequest,
   getUserSuccessful,
-} from 'src/reducers/usersSlice';
-import { useLazyGetUsersQuery } from 'src/services/getUsers';
-import { IUser } from 'src/types/users';
+} from 'src/Reducers/UsersSlice';
+import { useLazyGetUsersQuery } from 'src/Services/getUsers';
 import { DEBOUNCE_TIME, USER_NAME_KEY_QUERY } from './constants';
-import { DEFAULT_PAGINATION } from 'src/config';
 
 const SearchBar: React.FC = () => {
   const [trigger] = useLazyGetUsersQuery();
@@ -40,31 +40,7 @@ const SearchBar: React.FC = () => {
     try {
       const { data: totalUser } = await trigger({ userName, page });
       if (!totalUser) return;
-      const { items, total_count } = totalUser;
-
-      /**
-       * Note: Search API doesn't have total followers and following for each user, so I need to call another API to get the information.
-       */
-      const usersData = await Promise.all(
-        items.map(
-          async ({ url }) =>
-            (await (
-              await fetch(url, {
-                method: 'GET',
-                headers: {
-                  Authorization: `${process.env.REACT_APP_TOKEN_KEY} ${process.env.REACT_APP_TOKEN}`,
-                },
-              })
-            ).json()) as IUser
-        )
-      );
-
-      dispatch(
-        getUserSuccessful({
-          total_count,
-          items: usersData,
-        })
-      );
+      dispatch(getUserSuccessful(totalUser));
     } catch (error) {
       dispatch(getUsersFailure());
       throw error;
@@ -74,6 +50,10 @@ const SearchBar: React.FC = () => {
 
   const handleSearchUsers = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value: userName } = event.target;
+    /**
+     * need to reset status when searching again
+     */
+    dispatch(getUserResetStatus());
 
     handleSyncParams([
       { name: USER_NAME_KEY_QUERY, value: userName },

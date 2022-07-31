@@ -1,11 +1,11 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { persistor, store } from './app/store';
+import { persistor, store } from './App/store';
 import { PersistGate } from 'redux-persist/integration/react';
-import RouterComponent from './routers';
+import RouterComponent from './Routers';
 
-import { ErrorBoundary } from './components/common';
-import ThemeContainer from './components/layout/theme';
+import { ErrorBoundary } from './Components/Common';
+import ThemeContainer from './Components/Layout/Theme';
 
 const App: React.FC = () => {
   return (

@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useAppSelector } from 'src/app/hooks';
-import { EThemeMode } from 'src/types';
-import { getDesignTokens } from 'src/config/themeColor';
+import { EThemeMode } from 'src/Types';
+import { useAppSelector } from 'src/Hooks';
+import { getDesignTokens } from 'src/Config';
 
 const ThemeContainer: React.FC<{ children: React.ReactNode }> = ({
   children,

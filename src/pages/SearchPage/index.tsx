@@ -1,20 +1,23 @@
 import { Box, Pagination, Typography } from '@mui/material';
 import React, { useMemo } from 'react';
-import { useAppSelector } from 'src/app/hooks';
-import Loading from 'src/components/common/Loading';
-import { USER_NAME_KEY_QUERY } from 'src/components/layout/Main/components/SearchBar/constants';
-import { DEFAULT_PAGINATION } from 'src/config';
-import { numberWithCommas } from 'src/helpers';
-import useSyncParams from 'src/hooks/useSyncParams';
-import { KEY_PAGE_PARAMS } from './components/contanst';
+import { useAppSelector } from 'src/Hooks';
+import Loading from 'src/Components/Common/Loading';
+import { USER_NAME_KEY_QUERY } from 'src/Components/Layout/Main/components/SearchBar/constants';
+import { numberWithCommas } from 'src/Helpers';
+import useSyncParams from 'src/Hooks/useSyncParams';
+import { KEY_PAGE_PARAMS } from './Components/contanst';
 
-import Description from './components/Description';
-import ListUsers from './components/ListUsers';
+import Description from './Components/Description';
+import ListUsers from './Components/ListUsers';
+import NotFound from './Components/NotFoundUser';
+import DEFAULT_PAGINATION from 'src/Config/pagination';
 
 const SearchPage: React.FC = () => {
-  const { data: userData, isLoading } = useAppSelector(
-    (state) => state.usersReducer
-  );
+  const {
+    data: usersData,
+    isLoading,
+    isNotFoundUser,
+  } = useAppSelector((state) => state.usersReducer);
   const { handleSyncParams, getQueryParams } = useSyncParams();
 
   const pageParam = getQueryParams(KEY_PAGE_PARAMS);
@@ -25,8 +28,8 @@ const SearchPage: React.FC = () => {
     return Number(currentPage);
   }, [pageParam]);
 
-  const { total_count, items } = userData;
-  const isEmptyUsers = !(items && items.length);
+  const { total_count, items } = usersData;
+
   const totalPage = Math.ceil(total_count / DEFAULT_PAGINATION.PER_PAGE);
 
   const handleChangePage = (
@@ -36,6 +39,8 @@ const SearchPage: React.FC = () => {
     handleSyncParams([{ name: KEY_PAGE_PARAMS, value: page.toString() }]);
   };
 
+  const isEmptyUser = useMemo(() => !(items && items.length > 0), [items]);
+
   if (isLoading) return <Loading />;
 
   if (!userNameParams)
@@ -44,16 +49,17 @@ const SearchPage: React.FC = () => {
         <Description />
       </Box>
     );
+
+  if (isNotFoundUser) return <NotFound userName={userNameParams} />;
+
   return (
     <Box>
-      {isEmptyUsers ? (
-        <Description />
-      ) : (
+      {!isEmptyUser && (
         <>
           <Typography marginY={2}>
             {numberWithCommas(total_count)} Github users found
           </Typography>
-          <ListUsers userData={userData} />
+          <ListUsers userData={usersData} />
         </>
       )}
       {totalPage > 0 && (

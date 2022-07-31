@@ -1,4 +1,4 @@
-import { TOKEN_KEY } from 'src/constant';
+import { TOKEN_KEY } from 'src/Constant';
 
 export const isLogin = () => !!window.localStorage.getItem(TOKEN_KEY);
 

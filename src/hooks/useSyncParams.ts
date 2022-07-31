@@ -3,7 +3,7 @@ import { useHistory, useLocation } from 'react-router';
 
 interface IHandleSyncParams {
   name: string;
-  value: string;
+  value: string | number;
 }
 
 const useSyncParams = () => {

@@ -1,6 +1,6 @@
-import { EThemeMode } from 'src/types';
+import { EThemeMode } from 'src/Types';
 
-export const getDesignTokens = (mode: EThemeMode) => ({
+const getDesignTokens = (mode: EThemeMode) => ({
   palette: {
     mode,
     info: {
@@ -44,3 +44,5 @@ export const getDesignTokens = (mode: EThemeMode) => ({
     },
   },
 });
+
+export default getDesignTokens;

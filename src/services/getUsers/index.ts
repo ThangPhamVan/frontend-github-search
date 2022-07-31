@@ -1,8 +1,9 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import queryString from 'query-string';
-import { DEFAULT_PAGINATION } from 'src/config/pagination';
-import { SEARCH_USER_URL, TOKEN, TOKEN_TYPE } from 'src/constant';
-import { IDataUsers } from 'src/reducers/usersSlice';
+import { DEFAULT_PAGINATION } from 'src/Config';
+import { SEARCH_USER_URL, TOKEN, TOKEN_TYPE } from 'src/Constant';
+import { getInfoUsersInParallel } from 'src/Helpers';
+import { IDataUsers } from 'src/Reducers/UsersSlice';
 interface IGetUsersParams {
   userName: string;
   page?: number;
@@ -44,6 +45,13 @@ export const getUsersApi = createApi({
         return `users?${parsed}`;
       },
       providesTags: ['Users'],
+      transformResponse: async (response: IDataUsers) => {
+        const newResponse = await getInfoUsersInParallel(response.items);
+        return {
+          ...response,
+          items: newResponse,
+        };
+      },
     }),
   }),
 });

@@ -1,10 +1,15 @@
 import { Box, FormControlLabel, Tooltip, Typography } from '@mui/material';
-import React from 'react';
-import Switch, { SwitchProps } from '@mui/material/Switch';
 import { styled } from '@mui/material/styles';
-import { useAppDispatch, useAppSelector } from 'src/app/hooks';
-import { toggleMode } from 'src/reducers/themeSlice';
-import { EThemeMode } from 'src/types';
+import Switch, { SwitchProps } from '@mui/material/Switch';
+import React, { useMemo } from 'react';
+import { matchPath, useLocation } from 'react-router';
+import { Link } from 'react-router-dom';
+import useAppDispatch from 'src/Hooks/useAppDispatch';
+import useAppSelector from 'src/Hooks/useAppSelector';
+import { toggleMode } from 'src/Reducers/ThemeSlice';
+import { ROUTES } from 'src/Routers/config';
+import { EThemeMode } from 'src/Types';
+import { MAPPING_TITLE } from '../../contants';
 const SwitchCustom = styled((props: SwitchProps) => (
   <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
 ))(({ theme }) => ({
@@ -34,7 +39,7 @@ const SwitchCustom = styled((props: SwitchProps) => (
     },
     '&.Mui-disabled .MuiSwitch-thumb': {
       color:
-        theme.palette.mode === 'light'
+        theme.palette.mode === EThemeMode.LIGHT
           ? theme.palette.grey[100]
           : theme.palette.grey[600],
     },
@@ -64,6 +69,14 @@ const NavBar: React.FC = () => {
   const handleSwitch = () => {
     dispatch(toggleMode());
   };
+  const { pathname } = useLocation();
+  const titlePage = useMemo(() => {
+    const result = ROUTES.find((config) => matchPath(pathname, config));
+    if (!result) return;
+    const { link, content } = MAPPING_TITLE[result.path];
+    return link ? <Link to={link}>{content}</Link> : content;
+  }, [pathname]);
+
   return (
     <Box
       display="flex"
@@ -72,7 +85,7 @@ const NavBar: React.FC = () => {
       padding="40px 0 25px 0"
     >
       <Typography variant="h5" sx={{ fontWeight: 'bolder' }}>
-        Search
+        {titlePage}
       </Typography>
       <Tooltip title="Toggle dark mode" arrow>
         <FormControlLabel
