@@ -1,0 +1,8 @@
+.pagination-customize li button.Mui-selected {
+  background-color: #1976d2;
+  color: white;
+}
+.pagination-customize li:first-child button,
+.pagination-customize li:last-child button {
+  border-radius: 50%;
+}

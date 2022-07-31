@@ -3,10 +3,12 @@ import { rootReducer } from 'src/reducers';
 import { serviceReducers, servicesMiddleware } from 'src/services';
 import storage from 'redux-persist/lib/storage';
 import { persistReducer, persistStore } from 'redux-persist';
+import { BLACK_LIST } from 'src/config';
 
 const persistConfig = {
   key: 'root',
   storage,
+  blacklist: BLACK_LIST,
 };
 const mergedReducer = combineReducers(
   Object.assign(rootReducer, serviceReducers)
@@ -19,7 +21,9 @@ const persistedReducer = persistReducer<ReturnType<typeof mergedReducer>>(
 export const store = configureStore({
   reducer: persistedReducer,
   middleware(getDefaultMiddleware) {
-    return getDefaultMiddleware().concat(servicesMiddleware);
+    return getDefaultMiddleware({
+      serializableCheck: false,
+    }).concat(servicesMiddleware);
   },
   devTools: process.env.NODE_ENV !== 'production',
 });

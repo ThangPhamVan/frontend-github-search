@@ -1,7 +1,7 @@
-import { requestApi } from './example';
+import { getUsersApi } from './getUsers';
 
 export const serviceReducers = {
-  [requestApi.reducerPath]: requestApi.reducer,
+  [getUsersApi.reducerPath]: getUsersApi.reducer,
 };
 
-export const servicesMiddleware = [requestApi.middleware];
+export const servicesMiddleware = [getUsersApi.middleware];

@@ -9,7 +9,7 @@ const initialState: ThemeModeState = {
 };
 
 export const themeSlice = createSlice({
-  name: 'themeSlice',
+  name: 'themeReducer',
   initialState,
   reducers: {
     toggleMode: (state) => {
