@@ -6,6 +6,7 @@ import { useAppSelector } from 'src/Hooks';
 import { useLazyGetUserQuery } from 'src/Services/getUserByName';
 import { IUser } from 'src/Types';
 import UserInfo from '../SearchPage/Components/UserInfo';
+import NotFoundFavorites from './Components/NotFoundFavorites';
 
 const FavoritesPage = () => {
   const { listFavorites } = useAppSelector((state) => state.favoritesReducer);
@@ -32,6 +33,8 @@ const FavoritesPage = () => {
       setIsFetching(false);
     }
   };
+
+  const isEmptyFavorites = !(listFavorites && listFavorites.length);
   useEffect(() => {
     getListFavorites();
   }, [listFavorites]);
@@ -39,12 +42,16 @@ const FavoritesPage = () => {
   if (isFetching) return <Loading />;
 
   return (
-    <Box flex={1}>
-      <GridLayoutDefault>
-        {resultFavorites.map((user) => (
-          <UserInfo user={user} key={1} highlightName="name" />
-        ))}
-      </GridLayoutDefault>
+    <Box flex={1} height="100%">
+      {isEmptyFavorites ? (
+        <NotFoundFavorites />
+      ) : (
+        <GridLayoutDefault>
+          {resultFavorites.map((user) => (
+            <UserInfo user={user} key={1} highlightName="name" />
+          ))}
+        </GridLayoutDefault>
+      )}
     </Box>
   );
 };
