@@ -1,9 +1,47 @@
 # Oddle Front-end Challenge - PHAM VAN THANG (TIM) 💻
 
-# [Deployed GitHub Amplify Site](https://jy411.github.io/oddle-jinyung/#/)
-# Deployment
-Any pushed made to the `submission` branch will be deployed to the `21`
+# [Deployed GitHub Amplify Site](https://submission.d2r9px4lxtkhku.amplifyapp.com)
+
+## Deployment
+Any pushed made to the `submission` branch will be deployed to the `Amplify host`
 ***
+
+## Features
+
+- PAGE `Search`
+
+  - Debounce when searching
+
+  - Synchronize users searching with URL, so user can copy/paste the url and it will always show the same contents under the same browser, and including page number as well  
+
+  - List user from GitHub API, number of user found
+  
+  - Pagination
+
+  - Notification when user not found
+
+  - User can like/dislike when clicking on the heart icon and add them to favorite list
+
+- PAGE `User Detail`
+
+  - Display specific user's information, including name, contact info, lists of repositories, list of followers & list of following users 
+
+  - HOME icon to back to home page
+
+- PAGE `Favorites`
+
+  - Displays the information of the user who liked, including name, contact information, total number of followers and total number of followers...
+
+  - Synchronize data with local storage
+
+- `Dark Mode`
+
+  - Change the color of background color, text, icons, etc. when switching mode
+
+  - Synchronize with local storage even on web page refresh 
+
+***
+
 ## Local Development Setup
 
 Perform the following steps to get started:
@@ -16,7 +54,6 @@ Perform the following steps to get started:
 
 
 ### Project Folder Strucutre
-
 
 ```
 ├─ .env
@@ -189,7 +226,7 @@ Perform the following steps to get started:
 
 `Components`: Contains all the components of the application.
 
-`Images`: Contains all the static images of the application.
+`Store`: Contains all the config store of the application.
 
 The rest are self explanatory.
 ***
@@ -217,7 +254,7 @@ The other packages can be found in the `package.json` file.
 
 ### ESLint configuration
 
-ESLint config can be found in the `.eslintrc` file
+-ESLint config can be found in the `.eslintrc` file
 
 
 ### Prettierrc configuration
