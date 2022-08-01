@@ -31,6 +31,7 @@ const UserInfo: React.FC<IUserInfoProps> = ({ user, highlightName }) => {
     () => listFavorites.includes(login),
     [listFavorites]
   );
+  const iconStyles = { fill: '#F44336', cursor: 'pointer' };
   return (
     <Item>
       <Grid
@@ -78,13 +79,10 @@ const UserInfo: React.FC<IUserInfoProps> = ({ user, highlightName }) => {
           </Grid>
           <Grid item display="flex">
             {isFavoriteUser ? (
-              <FavoriteIcon
-                sx={{ fill: '#F44336' }}
-                onClick={handleRemoveFavorites}
-              />
+              <FavoriteIcon sx={iconStyles} onClick={handleRemoveFavorites} />
             ) : (
               <FavoriteBorderSharpIcon
-                style={{ fill: '#F44336' }}
+                style={iconStyles}
                 onClick={handleAddFavorites}
               />
             )}
