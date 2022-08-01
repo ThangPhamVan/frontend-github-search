@@ -1,6 +1,6 @@
 # Oddle Front-end Challenge - PHAM VAN THANG (TIM) 💻
 
-# [Deployed GitHub Amplify Site](https://submission.d2r9px4lxtkhku.amplifyapp.com)
+# [Deployed Amplify Site](https://submission.d2r9px4lxtkhku.amplifyapp.com)
 
 ## Deployment
 Any pushed made to the `submission` branch will be deployed to the `Amplify host`
