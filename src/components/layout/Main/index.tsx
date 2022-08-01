@@ -1,9 +1,8 @@
 import { Box } from '@mui/system';
 import React from 'react';
-import BaseLayout from '../Base';
-import BottomNav from './components/BottomNavigation';
-import NavBar from '../Base/Components/NavBar';
-import SearchBar from './components/SearchBar';
+import BaseLayout from '../base';
+import BottomNav from './components/bottomNavigation';
+import SearchBar from './components/searchBar';
 
 const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (

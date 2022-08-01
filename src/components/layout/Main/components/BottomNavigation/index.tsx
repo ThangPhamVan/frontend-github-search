@@ -4,7 +4,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import { useHistory } from 'react-router';
-import { ROUTING_CONFIG } from 'src/Routers/constants';
+import { ROUTING_CONFIG } from 'src/routers/constants';
 
 const BottomNav: React.FC = () => {
   const [value, setValue] = useState(0);

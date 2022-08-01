@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { GET_USER_URL, TOKEN, TOKEN_TYPE } from 'src/Constant';
-import { getInfoUsersInParallel } from 'src/Helpers';
-import { IUser } from 'src/Types';
+import { GET_USER_URL, TOKEN, TOKEN_TYPE } from 'src/constant';
+import { getInfoUsersInParallel } from 'src/helpers';
+import { IUser } from 'src/types';
 interface IGetFollowersApiParams {
   userName: string;
 }

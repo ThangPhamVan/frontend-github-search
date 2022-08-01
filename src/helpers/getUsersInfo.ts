@@ -1,5 +1,5 @@
-import { TOKEN, TOKEN_TYPE } from 'src/Constant';
-import { IUser } from 'src/Types';
+import { TOKEN, TOKEN_TYPE } from 'src/constant';
+import { IUser } from 'src/types';
 
 /**
  * Note: Search API doesn't have total followers and following for each user, so I need to call another API to get the information.

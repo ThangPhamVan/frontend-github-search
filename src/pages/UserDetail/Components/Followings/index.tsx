@@ -1,9 +1,9 @@
 import React from 'react';
-import Loading from 'src/Components/Common/Loading';
-import { GridLayoutDefault } from 'src/Components/Layout';
-import UserInfo from 'src/Pages/SearchPage/Components/UserInfo';
-import { useGetFollowingsQuery } from 'src/Services/getFollowings';
-import { IUser } from 'src/Types';
+import Loading from 'src/components/common/loading';
+import { GridLayoutDefault } from 'src/components/layout';
+import UserInfo from 'src/pages/searchPage/components/userInfo';
+import { useGetFollowingsQuery } from 'src/services/getFollowings';
+import { IUser } from 'src/types';
 
 interface IProps {
   user: IUser;

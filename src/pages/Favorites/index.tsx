@@ -1,12 +1,12 @@
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
-import Loading from 'src/Components/Common/Loading';
-import { GridLayoutDefault } from 'src/Components/Layout';
-import { useAppSelector } from 'src/Hooks';
-import { useLazyGetUserQuery } from 'src/Services/getUserByName';
-import { IUser } from 'src/Types';
-import UserInfo from '../SearchPage/Components/UserInfo';
-import NotFoundFavorites from './Components/NotFoundFavorites';
+import Loading from 'src/components/common/loading';
+import { GridLayoutDefault } from 'src/components/layout';
+import { useAppSelector } from 'src/hooks';
+import { useLazyGetUserQuery } from 'src/services/getUserByName';
+import { IUser } from 'src/types';
+import UserInfo from '../searchPage/components/userInfo';
+import NotFoundFavorites from './components/notFoundFavorites';
 
 const FavoritesPage = () => {
   const { listFavorites } = useAppSelector((state) => state.favoritesReducer);

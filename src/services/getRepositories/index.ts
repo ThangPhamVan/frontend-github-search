@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { GET_USER_URL, TOKEN, TOKEN_TYPE } from 'src/Constant';
-import { IRepository } from 'src/Types/Repository';
+import { GET_USER_URL, TOKEN, TOKEN_TYPE } from 'src/constant';
+import { IRepository } from 'src/types/Repository';
 interface IGetRepositoriesApiParams {
   userName: string;
 }

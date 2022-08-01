@@ -1,9 +1,9 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { rootReducer } from 'src/Reducers';
-import { serviceReducers, servicesMiddleware } from 'src/Services';
+import { rootReducer } from 'src/reducers';
+import { serviceReducers, servicesMiddleware } from 'src/services';
 import storage from 'redux-persist/lib/storage';
 import { persistReducer, persistStore } from 'redux-persist';
-import { BLACK_LIST } from 'src/Config';
+import { BLACK_LIST } from 'src/config';
 
 const persistConfig = {
   key: 'root',

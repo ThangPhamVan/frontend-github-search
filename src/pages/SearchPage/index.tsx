@@ -1,16 +1,16 @@
 import { Box, Pagination, Typography } from '@mui/material';
 import React, { useMemo } from 'react';
-import { useAppSelector } from 'src/Hooks';
-import Loading from 'src/Components/Common/Loading';
-import { USER_NAME_KEY_QUERY } from 'src/Components/Layout/Main/components/SearchBar/constants';
-import { numberWithCommas } from 'src/Helpers';
-import useSyncParams from 'src/Hooks/useSyncParams';
-import { KEY_PAGE_PARAMS } from './Components/contanst';
+import { useAppSelector } from 'src/hooks';
+import Loading from 'src/components/common/loading';
+import { numberWithCommas } from 'src/helpers';
+import useSyncParams from 'src/hooks/useSyncParams';
+import { KEY_PAGE_PARAMS } from './components/constants';
 
-import Description from './Components/Description';
-import ListUsers from './Components/ListUsers';
-import NotFound from './Components/NotFoundUser';
-import DEFAULT_PAGINATION from 'src/Config/pagination';
+import Description from './components/description';
+import ListUsers from './components/listUsers';
+import NotFound from './components/notFoundUser';
+import DEFAULT_PAGINATION from 'src/config/pagination';
+import { USER_NAME_KEY_QUERY } from 'src/components/layout/main/components/searchBar/constants';
 
 const SearchPage: React.FC = () => {
   const {

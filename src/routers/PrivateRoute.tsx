@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect, Route, RouteProps } from 'react-router-dom';
-import { isLogin } from 'src/Helpers';
+import { isLogin } from 'src/helpers';
 import { ROUTING_CONFIG } from './constants';
 interface PrivateRouteProps extends RouteProps {
   component: React.FC<RouteProps>;

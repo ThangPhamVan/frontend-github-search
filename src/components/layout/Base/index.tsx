@@ -1,7 +1,7 @@
 import { Box, CssBaseline, Grid } from '@mui/material';
 import React from 'react';
-import { EThemeMode } from 'src/Types';
-import NavBar from './Components/NavBar';
+import EThemeMode from 'src/types/themeMode';
+import NavBar from './components/navBar';
 import { Root } from './styled';
 
 interface IBaseLayoutProps {

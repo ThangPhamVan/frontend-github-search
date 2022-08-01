@@ -4,12 +4,12 @@ import Switch, { SwitchProps } from '@mui/material/Switch';
 import React, { useMemo } from 'react';
 import { matchPath, useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
-import useAppDispatch from 'src/Hooks/useAppDispatch';
-import useAppSelector from 'src/Hooks/useAppSelector';
-import { toggleMode } from 'src/Reducers/ThemeSlice';
-import { ROUTES } from 'src/Routers/config';
-import { EThemeMode } from 'src/Types';
-import { MAPPING_TITLE } from '../../contants';
+import useAppDispatch from 'src/hooks/useAppDispatch';
+import useAppSelector from 'src/hooks/useAppSelector';
+import { toggleMode } from 'src/reducers/themeSlice';
+import { ROUTES } from 'src/routers/config';
+import EThemeMode from 'src/types/themeMode';
+import { MAPPING_TITLE } from '../../constants';
 const SwitchCustom = styled((props: SwitchProps) => (
   <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
 ))(({ theme }) => ({

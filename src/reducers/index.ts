@@ -1,6 +1,6 @@
-import favoritesSlice from './FavoritesSlice';
-import themeSlice from './ThemeSlice';
-import usersSlice from './UsersSlice';
+import favoritesSlice from './favoritesSlice';
+import themeSlice from './themeSlice';
+import usersSlice from './usersSlice';
 
 export const rootReducer = {
   themeMode: themeSlice,

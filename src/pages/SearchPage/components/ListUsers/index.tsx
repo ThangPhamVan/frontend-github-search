@@ -1,10 +1,10 @@
 import { Box, Grid } from '@mui/material';
 import React from 'react';
-import { GridLayoutDefault } from 'src/Components/Layout';
-import { USER_NAME_KEY_QUERY } from 'src/Components/Layout/Main/components/SearchBar/constants';
-import useSyncParams from 'src/Hooks/useSyncParams';
-import { IDataUsers } from 'src/Reducers/UsersSlice';
-import UserInfo from '../UserInfo';
+import { GridLayoutDefault } from 'src/components/layout';
+import { USER_NAME_KEY_QUERY } from 'src/components/layout/main/components/searchBar/constants';
+import useSyncParams from 'src/hooks/useSyncParams';
+import { IDataUsers } from 'src/reducers/UsersSlice';
+import UserInfo from '../userInfo';
 interface IListUsersProps {
   userData: IDataUsers;
 }

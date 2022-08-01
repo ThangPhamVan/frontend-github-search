@@ -1,7 +1,7 @@
 import * as React from 'react';
 import HomeIcon from '@mui/icons-material/Home';
 
-import { ROUTING_CONFIG } from 'src/Routers/constants';
+import { ROUTING_CONFIG } from 'src/routers/constants';
 import { Box } from '@mui/material';
 
 export const MAPPING_TITLE = {

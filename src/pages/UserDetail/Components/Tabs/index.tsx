@@ -3,15 +3,15 @@ import { Box, Typography, useTheme } from '@mui/material';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { TABS } from './config';
-import { IUser } from 'src/Types';
-import { a11yProps, TabPanel } from '../Tab';
+import { IUser } from 'src/types';
+import { a11yProps, TabPanel } from '../tab';
 import SwipeableViews from 'react-swipeable-views';
-import { nFormatter } from 'src/Helpers';
-import Repositories from '../Repositories';
-import Followers from '../Followers';
-import Followings from '../Followings';
-import useSyncParams from 'src/Hooks/useSyncParams';
-import { TAB_KEY } from './contants';
+import { nFormatter } from 'src/helpers';
+import Repositories from '../repositories';
+import Followers from '../followers';
+import Followings from '../followings';
+import useSyncParams from 'src/hooks/useSyncParams';
+import { TAB_KEY } from './constants';
 
 interface ITabsProps {
   userInfo: IUser;

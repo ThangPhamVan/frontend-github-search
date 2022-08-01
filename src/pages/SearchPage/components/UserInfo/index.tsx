@@ -5,13 +5,13 @@ import { Avatar, Grid, Typography } from '@mui/material';
 import Highlighter from 'react-highlight-words';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { useAppSelector } from 'src/Hooks';
+import { useAppSelector } from 'src/hooks';
 import {
   addUserFavorite,
   removeUserFavorite,
-} from 'src/Reducers/FavoritesSlice';
+} from 'src/reducers/favoritesSlice';
 import { Item } from './styled';
-import { IUser } from 'src/Types';
+import { IUser } from 'src/types';
 
 interface IUserInfoProps {
   user: IUser;

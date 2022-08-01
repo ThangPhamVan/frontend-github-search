@@ -1,7 +1,6 @@
-import { IUser } from 'src/Types';
+import { IUser } from 'src/types';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { GET_USER_URL, TOKEN, TOKEN_TYPE } from 'src/Constant';
-import { IDataUsers } from 'src/Reducers/UsersSlice';
+import { GET_USER_URL, TOKEN, TOKEN_TYPE } from 'src/constant';
 interface IGetUserParams {
   userName: string;
 }

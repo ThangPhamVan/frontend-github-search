@@ -3,18 +3,18 @@ import TextField from '@mui/material/TextField';
 import React, { useCallback, useEffect } from 'react';
 
 import { debounce } from '@mui/material';
-import { DEFAULT_PAGINATION } from 'src/Config';
-import { useAppDispatch } from 'src/Hooks';
-import useSyncParams from 'src/Hooks/useSyncParams';
-import { KEY_PAGE_PARAMS } from 'src/Pages/SearchPage/Components/contanst';
+import { DEFAULT_PAGINATION } from 'src/config';
+import { useAppDispatch } from 'src/hooks';
+import useSyncParams from 'src/hooks/useSyncParams';
 import {
   getUserResetStatus,
   getUsersFailure,
   getUsersRequest,
   getUserSuccessful,
-} from 'src/Reducers/UsersSlice';
-import { useLazyGetUsersQuery } from 'src/Services/getUsers';
+} from 'src/reducers/usersSlice';
+import { useLazyGetUsersQuery } from 'src/services/getUsers';
 import { DEBOUNCE_TIME, USER_NAME_KEY_QUERY } from './constants';
+import { KEY_PAGE_PARAMS } from 'src/pages/searchPage/components/constants';
 
 const SearchBar: React.FC = () => {
   const [trigger] = useLazyGetUsersQuery();

@@ -1,11 +1,11 @@
 import { Box } from '@mui/material';
 import React from 'react';
 import { useHistory, useParams } from 'react-router';
-import Loading from 'src/Components/Common/Loading';
-import { ROUTING_CONFIG } from 'src/Routers/constants';
-import { useGetUserQuery } from 'src/Services/getUserByName';
-import TabsComponent from './Components/Tabs';
-import { UserBriefInformation } from './Components/UserBrief';
+import Loading from 'src/components/common/loading';
+import { ROUTING_CONFIG } from 'src/routers/constants';
+import { useGetUserQuery } from 'src/services/getUserByName';
+import TabsComponent from './components/tabs';
+import { UserBriefInformation } from './components/userBrief';
 
 interface IPramsPage {
   userName: string;

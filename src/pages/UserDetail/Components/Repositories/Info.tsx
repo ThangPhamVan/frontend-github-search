@@ -1,8 +1,8 @@
 import { Box, Typography } from '@mui/material';
 import React from 'react';
-import { nFormatter } from 'src/Helpers';
-import { Item } from 'src/Pages/SearchPage/Components/UserInfo/styled';
-import { IRepository } from 'src/Types/Repository';
+import { nFormatter } from 'src/helpers';
+import { Item } from 'src/pages/searchPage/components/userInfo/styled';
+import { IRepository } from 'src/types/repository';
 
 interface IUserInfoProps {
   repository: IRepository;

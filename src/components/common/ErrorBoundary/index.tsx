@@ -21,7 +21,7 @@ export const ErrorBoundary: React.FC<{
   children: React.ReactNode;
 }> = ({ children }) => {
   const handleReset = () => {
-    // history.push(ROUTING_CONFIG.HOME);
+    // TODO: do something
   };
   return (
     <ErrorComponent FallbackComponent={ErrorFallback} onReset={handleReset}>

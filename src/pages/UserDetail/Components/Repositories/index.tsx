@@ -1,10 +1,9 @@
-import { Box } from '@mui/material';
 import React from 'react';
-import Loading from 'src/Components/Common/Loading';
-import { GridLayoutDefault } from 'src/Components/Layout';
-import { useGetRepositoriesQuery } from 'src/Services/getRepositories';
-import { IUser } from 'src/Types';
-import RepositoryInfo from './Info';
+import Loading from 'src/components/common/loading';
+import { GridLayoutDefault } from 'src/components/layout';
+import { useGetRepositoriesQuery } from 'src/services/getRepositories';
+import { IUser } from 'src/types';
+import RepositoryInfo from './info';
 
 interface IProps {
   user: IUser;
