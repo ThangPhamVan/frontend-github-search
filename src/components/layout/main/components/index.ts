@@ -1,3 +1,3 @@
-export * from './BottomNavigation';
-export * from './SearchBar';
-export * from '../../Base/Components/NavBar';
+export * from './bottomNavigation';
+export * from './searchBar';
+export * from '../../base/components/navBar';

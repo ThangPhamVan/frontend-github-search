@@ -1,7 +1,7 @@
 import { Grid } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
-import IChildren from 'src/Types/React';
+import IChildren from 'src/types/react';
 
 const GridLayoutDefault: React.FC<IChildren> = ({ children }) => {
   return (
