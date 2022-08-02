@@ -24,8 +24,10 @@ Any pushed made to the `submission` branch will be deployed to the `Amplify host
 
 - PAGE `User Detail`
 
-  - Display specific user's information, including name, contact info, lists of repositories, list of followers & list of following users 
-
+  - Display specific user's information, including name, contact info, lists of repositories, list of followers & list of following users
+  
+  - Synchronize tab with URL, so user can copy/paste the url and it will always show the same contents under the same browser
+  
   - HOME icon to back to home page
 
 - PAGE `Favorites`
