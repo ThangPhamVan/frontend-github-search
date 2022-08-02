@@ -11,7 +11,7 @@ const GridLayoutDefault: React.FC<IChildren> = ({ children }) => {
           sx={{
             display: 'grid',
             gridTemplateColumns: { md: '1fr 1fr' },
-            gap: '30px 20px',
+            gap: '20px 20px',
           }}
         >
           {children}

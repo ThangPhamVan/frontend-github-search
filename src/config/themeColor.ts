@@ -1,4 +1,4 @@
-import { EThemeMode } from 'src/Types';
+import EThemeMode from 'src/types/themeMode';
 
 const getDesignTokens = (mode: EThemeMode) => ({
   palette: {
@@ -11,7 +11,7 @@ const getDesignTokens = (mode: EThemeMode) => ({
     typography: {
       fontFamily: 'Jost',
     },
-    ...(mode === 'light'
+    ...(mode === EThemeMode.LIGHT
       ? {
           background: {
             default: '#fff',
@@ -23,7 +23,7 @@ const getDesignTokens = (mode: EThemeMode) => ({
           },
         }),
     icons: {
-      ...(mode === 'light'
+      ...(mode === EThemeMode.LIGHT
         ? {
             primary: 'rgba(0, 0, 0, 0.5)',
           }
@@ -32,7 +32,7 @@ const getDesignTokens = (mode: EThemeMode) => ({
           }),
     },
     text: {
-      ...(mode === 'light'
+      ...(mode === EThemeMode.LIGHT
         ? {
             primary: '#000',
             github: 'rgba(0, 0, 0, 0.5)',
