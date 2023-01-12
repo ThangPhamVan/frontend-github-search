@@ -1,4 +1,4 @@
-# Oddle Front-end Challenge - PHAM VAN THANG (TIM) 💻
+PHAM VAN THANG (TIM) 💻
 
 # [Deployed Amplify Site](https://submission.d2r9px4lxtkhku.amplifyapp.com)
 
