@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, RouteProps } from 'react-router-dom';
-import { TConfigRouter } from 'src/types/RouterConfigModel';
+import { TConfigRouter } from 'src/Types';
 
 interface PubicRouteRouteProps extends TConfigRouter {
   component: React.FC<RouteProps>;

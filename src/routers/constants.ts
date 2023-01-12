@@ -1,4 +1,6 @@
-export const ROUTING_CONFIG = Object.freeze({
-  LOGIN: '/login',
-  HOME: '/',
-});
+export enum ROUTING_CONFIG {
+  LOGIN = '/login',
+  HOME = '/',
+  USER_DETAIL = '/users/:userName',
+  LIKED = '/liked',
+}
